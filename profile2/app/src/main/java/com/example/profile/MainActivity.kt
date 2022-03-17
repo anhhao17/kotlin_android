@@ -1,5 +1,6 @@
 package com.example.profile
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,7 +13,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.profile)
         val edt=findViewById<TextView>(R.id.profileEdt)
         edt.setOnClickListener(){
-            startActivity(Intent(this,dialog::class.java))
+            openDialog()
         }
+    }
+
+    fun openDialog(){
+       Mydialog().show(supportFragmentManager,"mydialog")
     }
 }
